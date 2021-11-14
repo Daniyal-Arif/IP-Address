@@ -1,5 +1,107 @@
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
 * {
   margin: 0;
-  width: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1;
+  font-weight: 500;
+  color: #fff;
+
+  /* temporary */
+  background-color: aqua;
+}
+
+.img-container {
+  background-image: url(../images/pattern-bg.png);
+  height: 30vh;
+  min-width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+h1 {
+  margin-bottom: 3.2rem;
+}
+
+form {
+  width: 100%;
+}
+
+.btn {
+  background-color: black;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  width: 30px;
+}
+
+.right-arrow {
+}
+
+.input-text {
+  width: 90%;
+  padding: 10px 14px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border: none;
+}
+
+.content {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 5%;
+
+  transform: translateX(-50%);
+}
+
+.container {
+  min-width: 40rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4.4rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+
+  width: 100%;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 2.4rem 6.4rem;
+  border-radius: 12px;
+}
+
+.main-info {
+  text-align: center;
+}
+
+.main-info h3 {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: hsl(0, 0%, 59%);
+  font-size: 0.8rem;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.main-info p {
+  font-size: 1.8rem;
+  color: hsl(0, 0%, 17%);
+  font-weight: 700;
 }
