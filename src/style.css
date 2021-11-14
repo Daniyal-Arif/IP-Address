@@ -14,9 +14,6 @@ body {
   line-height: 1;
   font-weight: 500;
   color: #fff;
-
-  /* temporary */
-  background-color: aqua;
 }
 
 .img-container {
@@ -34,24 +31,34 @@ h1 {
 
 form {
   width: 100%;
+  position: relative;
 }
 
 .btn {
   background-color: black;
   border: none;
   cursor: pointer;
-  padding: 8px 12px;
+  padding: 9px;
   width: 30px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
-.right-arrow {
+.btn img {
+  width: 14px;
+  height: 14px;
 }
 
 .input-text {
-  width: 90%;
+  outline: none;
+}
+.input-text {
+  width: 100%;
   padding: 10px 14px;
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
+  border-radius: 12px;
   border: none;
 }
 
@@ -62,6 +69,7 @@ form {
   top: 5%;
 
   transform: translateX(-50%);
+  z-index: 1000;
 }
 
 .container {
@@ -104,4 +112,10 @@ form {
   font-size: 1.8rem;
   color: hsl(0, 0%, 17%);
   font-weight: 700;
+}
+
+#map {
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
 }
