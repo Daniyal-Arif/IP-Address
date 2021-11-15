@@ -17,12 +17,17 @@ export const getCurrentLocation = function () {
 export const loadCurrentLocation = async function () {
   try {
     const res = await fetch(
-      `https://geo.ipify.org/api/v2/country?apiKey=${process.env.API_KEY}&ipAddress=8.8.8.8`
+      `https://geo.ipify.org/api/v2/country?apiKey=${process.env.API_KEY}` //&ipAddress=8.8.8.8
     );
-    const data = res.json();
+    const data = await res.json();
     if (!data) throw new Error("not available");
 
-    state.data = data;
+    state.data = {
+      ip: data.ip,
+      location: data.location.region,
+      timezone: data.location.timezone,
+      isp: data.isp,
+    };
     console.log(state.data);
   } catch (err) {
     throw err;
