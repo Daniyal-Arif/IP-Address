@@ -23,7 +23,11 @@ export const loadCurrentLocation = async function (
       `https://geo.ipify.org/api/v2/country,city?apiKey=${process.env.API_KEY}&ipAddress=${ipAddress}&domain=${domain}` //&ipAddress=8.8.8.8
     );
     const data = await res.json();
-    if (!data) throw new Error("not available");
+    if (!res.ok) {
+      alert("please input valid ip address or domain");
+      return;
+    }
+
     console.log(data);
     state.data = {
       ip: data.ip,
