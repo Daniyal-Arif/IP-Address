@@ -3,9 +3,15 @@ class SearchView {
 
   addHandlerSearch(handler) {
     this._parentElement.addEventListener("submit", function (e) {
-      console.log(e);
+      e.preventDefault();
       handler();
     });
+  }
+
+  getQuery() {
+    const query = document.querySelector(".input-text").value;
+
+    return query;
   }
 }
 
