@@ -12,10 +12,7 @@ if (module.hot) {
 
 const controlPageLoad = async function () {
   try {
-    // get current location
-    //  model.getCurrentLocation();
-
-    // load data of current location
+    // load data of current location by default
     await model.loadCurrentLocation();
 
     // render UI of current location
@@ -28,8 +25,8 @@ const controlPageLoad = async function () {
 
 const controlSearchResults = async function () {
   const query = searchView.getQuery();
-  console.log(query);
 
+  // check if query is an ipAddress or domain
   if (checkQueryType(query)) {
     await model.loadCurrentLocation("", query);
   } else {
@@ -47,7 +44,6 @@ const checkQueryType = function (query) {
 };
 
 const init = function () {
-  // searchView.addHandlerSearch(controlPageLoad);
   searchView.addHandlerSearch(controlSearchResults);
   controlPageLoad();
 };

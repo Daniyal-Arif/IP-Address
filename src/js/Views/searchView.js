@@ -10,7 +10,6 @@ class SearchView {
 
   getQuery() {
     const query = document.querySelector(".input-text").value;
-
     return query;
   }
 }

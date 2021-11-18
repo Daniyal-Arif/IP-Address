@@ -3,17 +3,6 @@ export const state = {
   coords: [],
 };
 
-// export const getCurrentLocation = function () {
-//   navigator.geolocation.getCurrentPosition(
-//     (position) => {
-//       console.log(position);
-//       state.coords = [position.coords.latitude, position.coords.longitude];
-//       console.log(state.coords);
-//     },
-//     (error) => console.log(error)
-//   );
-// };
-
 export const loadCurrentLocation = async function (
   ipAddress = "",
   domain = ""
@@ -28,7 +17,6 @@ export const loadCurrentLocation = async function (
       return;
     }
 
-    console.log(data);
     state.data = {
       ip: data.ip,
       location: `${data.location.city} ${data.location.region} ${data.location.postalCode}`,
@@ -36,8 +24,7 @@ export const loadCurrentLocation = async function (
       isp: data.isp,
     };
     state.coords = [data.location.lat, data.location.lng];
-    console.log(state.coords);
   } catch (err) {
-    throw err;
+    console.log(err);
   }
 };

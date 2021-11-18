@@ -3,7 +3,6 @@ import L from "leaflet/dist/leaflet";
 import View from "./View";
 
 class MapView extends View {
-  _parentElement = document.querySelector("#map");
   _mymap;
 
   createMap(coords) {
